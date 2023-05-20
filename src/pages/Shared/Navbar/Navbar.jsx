@@ -3,11 +3,11 @@ import logo from '../../../assets/Logo/logo.png'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
     const navItems = <>
-        <li><Link>Home</Link></li>
-        <li><Link>All Toys</Link></li>
-        <li><Link>My Toys</Link></li>
-        <li><Link>Add A Toys</Link></li>
-        <li><Link>Blogs</Link></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/allToys'>All Toys</Link></li>
+        <li><Link to='/myToys'>My Toys</Link></li>
+        <li><Link to='/addToys'>Add A Toys</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
     </>
     return (
         <div className='px-5 bg-sky-100 rounded-lg shadow-md sticky lg:px-28 '>
