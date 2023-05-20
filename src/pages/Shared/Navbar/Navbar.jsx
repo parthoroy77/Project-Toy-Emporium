@@ -2,6 +2,9 @@ import React from 'react';
 import logo from '../../../assets/Logo/logo.png'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
+    
+
+
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>

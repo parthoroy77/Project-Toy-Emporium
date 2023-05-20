@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/Logo/logo.png'
 import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../provider/AuthProvider';
+import { toast } from 'react-hot-toast';
 const Login = () => {
+    const { user, loginUser, googleLogin } = useContext(AuthContext);
+    const handleLogin = e => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        loginUser(email, password).then(result => {
+            const user = result.user;
+            console.log(user);
+            toast.success("Login Success full")
+        }).catch(error => {
+            toast.error(error.message)
+        })
+    }
+    const handleGoogleLogin = () => {
+        googleLogin().then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            toast.success('Login Successfull')
+        }).catch(error => {
+            toast.error(error.message)
+        })
+    }
     return (
         <div className='py-8'>
             <div className='lg:w-1/2 mx-auto'>
@@ -11,12 +36,12 @@ const Login = () => {
                         <img src={logo} className='mx-auto w-24' alt="" />
                         <h2 className='text-3xl font-bold text-blue-400'>ACCOUNT LOGIN</h2>
                     </div>
-                    <form className='space-y-5 my-5'>
+                    <form onSubmit={handleLogin} className='space-y-5 my-5'>
                         <div className="form-control">
-                            <input type="email" placeholder="Email" className="h-12 w-4/5 mx-auto input rounded-sm bg-base-300 border-collapse" />
+                            <input type="email" name='email' placeholder="Email" className="h-12 w-4/5 mx-auto input rounded-sm bg-base-300 border-collapse" />
                         </div>
                         <div className="form-control">
-                            <input type="password" placeholder="Password" className="h-12 w-4/5 mx-auto input rounded-sm bg-base-300 border-collapse" />
+                            <input type="password" name='password' placeholder="Password" className="h-12 w-4/5 mx-auto input rounded-sm bg-base-300 border-collapse" />
                         </div>
                             <Link className="label-text-alt ml-20 link link-hover">Forgot password?</Link>
                         <div className='text-center'>
@@ -26,7 +51,7 @@ const Login = () => {
                     </form>
                     <div className="divider w-4/5 mx-auto">OR</div> 
                     <div className='text-center mb-4'>
-                        <button className='btn lg:w-4/12 bg-orange-300 border-0'>
+                        <button onClick={handleGoogleLogin} className='btn lg:w-4/12 bg-orange-300 border-0'>
                             <FaGoogle className='mr-3 inline-block'/>
                             Google Login</button>
                     </div>
