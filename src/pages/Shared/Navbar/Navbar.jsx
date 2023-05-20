@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/Logo/logo.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
+import { toast } from 'react-hot-toast';
 const Navbar = () => {
-    
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut().then(result => {
+            toast.success('Log Out Successfully')
+        }).catch(error => {
+            toast.error(error.message)
+        })
+    }
 
 
     const navItems = <>
@@ -36,9 +45,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-2">
-                    <Link to='/login'><button className='btn btn-ghost'>Log In</button></Link>
-                    <Link to='/register'><button className='btn btn-ghost'>Log Out</button></Link>
-                    {/* <img title='partho' className="w-14 rounded-full" src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80' /> */}
+
+                    
+                    {
+                        user
+                            ? <>
+                                <Link><button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button></Link>
+                                <img title={user.displayName} className="w-14 rounded-full" src={user.photoURL} />
+                            </>
+                            : <Link to='/login'><button className='btn btn-ghost'>Log In</button></Link>
+                    }
                 </div>
             </div>
             <hr />

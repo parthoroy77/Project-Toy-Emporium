@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import logo from '../../assets/Logo/logo.png'
 import { Link } from 'react-router-dom';
-import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
 const Register = () => {
@@ -17,7 +16,7 @@ const Register = () => {
             const createdUser = result.user;
             createdUser.displayName = name;
             createdUser.photoURL = URL;
-            console.log(createdUser);
+            toast.success('User Created Successfully')
         }).catch(error => {
             toast.error(error.message)
         })
