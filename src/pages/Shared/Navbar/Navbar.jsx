@@ -32,8 +32,10 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <img title='partho' className="w-14 rounded-full" src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80' />
+                <div className="navbar-end space-x-2">
+                    <Link to='/login'><button className='btn btn-ghost'>Log In</button></Link>
+                    <Link to='/register'><button className='btn btn-ghost'>Log Out</button></Link>
+                    {/* <img title='partho' className="w-14 rounded-full" src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80' /> */}
                 </div>
             </div>
             <hr />
