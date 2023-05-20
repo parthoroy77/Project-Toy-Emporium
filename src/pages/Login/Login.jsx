@@ -26,8 +26,8 @@ const Login = () => {
                     </form>
                     <div className="divider w-4/5 mx-auto">OR</div> 
                     <div className='text-center mb-4'>
-                        <button className='btn w-4/12 bg-orange-300 border-0'>
-                            <FaGoogle className='mr-3'/>
+                        <button className='btn lg:w-4/12 bg-orange-300 border-0'>
+                            <FaGoogle className='mr-3 inline-block'/>
                             Google Login</button>
                     </div>
                     <div className='text-center'>
