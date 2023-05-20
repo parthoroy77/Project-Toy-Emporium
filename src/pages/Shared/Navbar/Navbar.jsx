@@ -10,8 +10,8 @@ const Navbar = () => {
         <li><Link>Blogs</Link></li>
     </>
     return (
-        <div className='px-5 lg:px-28'>
-            <div className="navbar bg-base-100">
+        <div className='px-5 bg-sky-100 rounded-lg shadow-md sticky lg:px-28 '>
+            <div className="navbar  ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
