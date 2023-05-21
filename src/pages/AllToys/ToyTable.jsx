@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-const ToyTable = ({ toy }) => {
+const ToyTable = ({ toy, handleDeleteToy }) => {
     const { _id, toyName, toyImg, subCategory, price, quantity, sellerName,sellerEmail, description } = toy;
     return (
         <>
@@ -40,7 +40,7 @@ const ToyTable = ({ toy }) => {
                     <button className="btn btn-ghost text-xl btn-sm">
                         <FaEdit></FaEdit>
                     </button>
-                    <button className="btn btn-ghost btn-sm text-xl">
+                    <button onClick={()=>handleDeleteToy(_id)} className="btn btn-ghost btn-sm text-xl">
                         <FaTrashAlt></FaTrashAlt>
                     </button>
                 </td>

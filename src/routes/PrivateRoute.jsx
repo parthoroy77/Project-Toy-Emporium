@@ -6,7 +6,9 @@ import { AuthContext } from '../provider/AuthProvider';
 const PrivateRoute = ({ children }) => {
     const {user, loader} = useContext(AuthContext)
     if (loader) {
-        return <PropagateLoader color="#36d7b7" />
+        return <div className='h-20 w-1/2 mx-auto flex justify-center items-center'>
+            <PropagateLoader  color="#36d7b7" />
+        </div>
     }
     if (user) {
         return children;

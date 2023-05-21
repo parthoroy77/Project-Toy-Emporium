@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import logo from '../../assets/Logo/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
 const Register = () => {
-    const { user, createUser } = useContext(AuthContext);
+    const { user, profileUpdate, createUser } = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleSignUp = e => {
         e.preventDefault();
         const form = e.target;
@@ -12,11 +13,18 @@ const Register = () => {
         const URL = form.url.value;
         const email = form.email.value;
         const password = form.password.value;
+        if (password.length < 6) {
+            return toast.error('Password is too short')
+        }
+        else if (/"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"/.test(password)) {
+            return toast.error('Password must have 1 uppercase, 1 lowercase, 1 digit and 1 special character')
+        }
         createUser(email, password).then(result => {
             const createdUser = result.user;
-            createdUser.displayName = name;
-            createdUser.photoURL = URL;
+            profileUpdate(name,URL).then(result => {}).catch(err => {})
             toast.success('User Created Successfully');
+            form.reset();
+            navigate('/login')
         }).catch(error => {
             toast.error(error.message)
         })
