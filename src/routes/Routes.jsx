@@ -21,7 +21,8 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/allToys',
-                element: <AllToys></AllToys>
+                element: <AllToys></AllToys>,
+                loader: () => fetch('http://localhost:5000/allToys')
             },
             {
                 path: '/myToys',
@@ -29,7 +30,8 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/addToys',
-                element: <AddToys></AddToys>
+                element: <AddToys></AddToys>,
+                
             },
             {
                 path: '/blogs',
