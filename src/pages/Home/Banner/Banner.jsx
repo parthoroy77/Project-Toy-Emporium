@@ -4,8 +4,8 @@ import kid1 from '../../../assets/Banner/kid1.png'
 const Banner = () => {
     return (
         <div
-            className='banner-container pt-10 justify-between bg-gradient-to-t from-pink-500 to-blue-100 lg:px-28 px-5 items-center flex flex-col lg:flex-row '>
-            <div className='space-y-5'>
+            className='shadow-2xl pt-10 justify-between bg-gradient-to-t from-pink-500 to-blue-100 lg:px-28 px-5 items-center flex flex-col gap-5 lg:flex-row '>
+            <div className='space-y-5 text-center'>
                 <h2 className='text-2xl font-serif lg:text-5xl font-bold'>
                     Best Kids Store <br /> & Online Shopping
                 </h2>
@@ -20,7 +20,7 @@ const Banner = () => {
                 </div>
             </div>
             <div>
-                <img src={kid1} alt="" />
+                <img src={kid1} className='w-full' alt="" />
             </div>
         </div>
     );
