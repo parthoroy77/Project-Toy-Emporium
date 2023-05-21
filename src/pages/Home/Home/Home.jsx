@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import Gallery from '../Gallery/Gallery';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import useTitleHook from '../../../hooks/useTitleHook';
+import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
     useTitleHook('Home')
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
+            <Testimonial></Testimonial>
         </div>
     );
 };
