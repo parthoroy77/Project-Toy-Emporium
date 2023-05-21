@@ -11,9 +11,6 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate()
     const from = location?.state?.from.pathname || '/';
-    // if (location.state.from.pathname) {
-    //     toast.error('Login First')
-    // }
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -21,7 +18,6 @@ const Login = () => {
         const password = form.password.value;
         loginUser(email, password).then(result => {
             const user = result.user;
-            console.log(user);
             toast.success("Login Success full")
             navigate(from, {replace: true})
         }).catch(error => {
@@ -31,7 +27,6 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin().then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser);
             toast.success('Login Successfully')
         }).catch(error => {
             toast.error(error.message)

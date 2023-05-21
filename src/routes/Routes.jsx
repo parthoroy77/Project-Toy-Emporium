@@ -24,7 +24,7 @@ const routes = createBrowserRouter([
             {
                 path: '/allToys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/allToys')
+                loader: () => fetch('https://toy-emporium-server-snowy.vercel.app/allToys')
             },
             {
                 path: '/myToys',
@@ -33,7 +33,7 @@ const routes = createBrowserRouter([
             {
                 path: '/addToys',
                 element: <PrivateRoute><AddToys></AddToys></PrivateRoute>,
-                
+
             },
             {
                 path: '/blogs',
@@ -50,7 +50,7 @@ const routes = createBrowserRouter([
             {
                 path: 'details/:id',
                 element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-emporium-server-snowy.vercel.app/details/${params.id}`)
             }
         ]
     }

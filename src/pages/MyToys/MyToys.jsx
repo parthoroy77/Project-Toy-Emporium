@@ -9,8 +9,8 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys?email=${user?.email}`, { method: 'GET' }).then(res => res.json())
-        .then(data => setMyToys(data))
+        fetch(`https://toy-emporium-server-snowy.vercel.app/myToys?email=${user?.email}`, { method: 'GET' }).then(res => res.json())
+            .then(data => setMyToys(data))
     }, [user])
     const handleDeleteToy = (id) => {
         Swal.fire({
@@ -23,9 +23,8 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteToy/${id}`, { method: 'DELETE' })
+                fetch(`https://toy-emporium-server-snowy.vercel.app/deleteToy/${id}`, { method: 'DELETE' })
                     .then(res => res.json()).then(data => {
-                        console.log(data);
                         if (data.deletedCount > 0) {
                             setMyToys(myToys.filter(toy => toy._id !== id))
                             Swal.fire(
@@ -54,8 +53,8 @@ const MyToys = () => {
         <div className='px-5 lg:px-24'>
             <h3 className='text-center my-7 font-bold text-3xl'>My Toys</h3>
             <div className=''>
-                <button onClick={()=> handleSort('as')} className='btn btn-xs bg-sky-500 border-0 mr-4 mb-2'>Ascending</button>
-                <button onClick={()=>handleSort('des')} className='btn btn-xs bg-sky-500 border-0 mr-4 mb-2'>Descending</button>
+                <button onClick={() => handleSort('as')} className='btn btn-xs bg-sky-500 border-0 mr-4 mb-2'>Ascending</button>
+                <button onClick={() => handleSort('des')} className='btn btn-xs bg-sky-500 border-0 mr-4 mb-2'>Descending</button>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         {/* head */}

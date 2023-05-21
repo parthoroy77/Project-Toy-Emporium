@@ -19,16 +19,16 @@ const AddToys = () => {
         const description = form.description.value;
         const ratings = form.ratings.value;
         const addToy = {
-            toyName,toyImg,subCategory,price,quantity,ratings,sellerName,sellerEmail,description
+            toyName, toyImg, subCategory, price, quantity, ratings, sellerName, sellerEmail, description
         }
-        fetch('http://localhost:5000/addToys', {
+        fetch('https://toy-emporium-server-snowy.vercel.app/addToys', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(addToy)
         }).then(res => res.json()).then(data => {
             if (data.insertedId) {
                 toast.success('Toy Added Successfully')
-                // form reset
+                form.reset()
             }
         })
     }

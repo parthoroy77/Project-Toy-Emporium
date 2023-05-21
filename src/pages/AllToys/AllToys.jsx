@@ -11,7 +11,7 @@ const AllToys = () => {
     const [allToys, setAllToys] = useState(loadedToys);
     const [searchText, setSearchText] = useState('');
     const handleSearchByName = () => {
-        fetch(`http://localhost:5000/searchByName/${searchText}`)
+        fetch(`https://toy-emporium-server-snowy.vercel.app/searchByName/${searchText}`)
             .then(res => res.json()).then(data => setAllToys(data));
     }
     return (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
 
-const MyToyRow = ({ toy,handleDeleteToy }) => {
+const MyToyRow = ({ toy, handleDeleteToy }) => {
     const { _id, toyName, toyImg, subCategory, price, quantity, sellerName, sellerEmail, description } = toy;
     const handleUpdate = e => {
         e.preventDefault()
@@ -14,14 +14,13 @@ const MyToyRow = ({ toy,handleDeleteToy }) => {
         const updatedData = {
             price, quantity, description
         }
-        fetch(`http://localhost:5000/updateData/${_id}`, {
+        fetch(`https://toy-emporium-server-snowy.vercel.app/updateData/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(updatedData)
         }).then(res => res.json()).then(data => {
-            console.log(data);
             if (data.modifiedCount > 0) {
                 toast.success('Data Updated Successfully')
             }
@@ -44,7 +43,7 @@ const MyToyRow = ({ toy,handleDeleteToy }) => {
                     }
                 </td>
                 <td>
-                    {
+                    ${
                         price
                     }
                 </td>
@@ -61,7 +60,7 @@ const MyToyRow = ({ toy,handleDeleteToy }) => {
                         <FaEdit></FaEdit>
                     </label>
                     <button >
-                        
+
                     </button>
                     <button onClick={() => handleDeleteToy(_id)} className="btn btn-ghost btn-sm text-xl">
                         <FaTrashAlt></FaTrashAlt>
@@ -95,7 +94,7 @@ const MyToyRow = ({ toy,handleDeleteToy }) => {
                     </div>
                 </td>
             </tr>
-            
+
         </>
     );
 };

@@ -4,10 +4,10 @@ import { PropagateLoader } from 'react-spinners';
 import { AuthContext } from '../provider/AuthProvider';
 
 const PrivateRoute = ({ children }) => {
-    const {user, loader} = useContext(AuthContext)
+    const { user, loader } = useContext(AuthContext)
     if (loader) {
         return <div className='h-20 w-1/2 mx-auto flex justify-center items-center'>
-            <PropagateLoader  color="#36d7b7" />
+            <PropagateLoader color="#36d7b7" />
         </div>
     }
     if (user) {
@@ -15,8 +15,8 @@ const PrivateRoute = ({ children }) => {
     }
     const location = useLocation()
     return (
-        <Navigate to='/login' replace state={{from: location}}>
-            
+        <Navigate to='/login' replace state={{ from: location }}>
+
         </Navigate>
     );
 };

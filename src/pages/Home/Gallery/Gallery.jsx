@@ -31,11 +31,11 @@ const Gallery = () => {
                 <div data-aos='zoom-in' data-aos-duration="2000">
                     <img src={car7} className='h-full rounded-md' alt="" />
                 </div>
-                <div data-aos='fade-in' data-aos-duration="2000" className='grid rounded-xl gap-3 grid-cols-2'>
-                    <img src={car5} className='w-full rounded-md h-52' alt="" />
-                    <img src={car11} className='w-full rounded-md h-52' alt="" />
-                    <img src={car9} className='w-full rounded-md h-52' alt="" />
-                    <img src={car10} className='w-full rounded-md h-52' alt="" />
+                <div  data-aos-duration="2000" className='grid rounded-xl gap-3 grid-cols-2'>
+                    <img data-aos-duration="2000" data-aos='zoom-in' src={car5} className='w-full rounded-md h-52' alt="" />
+                    <img data-aos-duration="2000" data-aos='zoom-in' src={car11} className='w-full rounded-md h-52' alt="" />
+                    <img data-aos-duration="2000" data-aos='zoom-in' src={car9} className='w-full rounded-md h-52' alt="" />
+                    <img data-aos-duration="2000" data-aos='zoom-in' src={car10} className='w-full rounded-md h-52' alt="" />
                 </div>
             </div>
         </div>

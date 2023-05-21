@@ -1,5 +1,8 @@
 import React from 'react';
-import {FaStar, FaStarHalf} from 'react-icons/fa'
+import { FaStar, FaStarHalf } from 'react-icons/fa'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Testimonial = () => {
     return (
         <div className='px-5 lg:px-24 my-14'>
@@ -10,7 +13,7 @@ const Testimonial = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
                 <div className="card bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
-                        <img src="https://img.freepik.com/free-photo/man-wearing-t-shirt-gesturing_23-2149393645.jpg" alt="Shoes" className="rounded-xl" />
+                        <img data-aos-duration="2000" data-aos='zoom-in-right' src="https://img.freepik.com/free-photo/man-wearing-t-shirt-gesturing_23-2149393645.jpg" alt="Shoes" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">HidleSton</h2>
@@ -26,7 +29,7 @@ const Testimonial = () => {
                 </div>
                 <div className="card  bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
-                        <img src='https://img.freepik.com/premium-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg' alt="Shoes" className="rounded-xl" />
+                        <img data-aos-duration="2000" data-aos='zoom-in-up' src='https://img.freepik.com/premium-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg' alt="Shoes" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Wiliam Smith</h2>
@@ -42,7 +45,7 @@ const Testimonial = () => {
                 </div>
                 <div className="card  bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
-                        <img src="https://img.freepik.com/free-photo/happiness-wellbeing-confidence-concept-cheerful-attractive-african-american-woman-curly-haircut-cross-arms-chest-self-assured-powerful-pose-smiling-determined-wear-yellow-sweater_176420-35063.jpg" />
+                        <img data-aos-duration="2000" data-aos='zoom-in-left' src="https://img.freepik.com/free-photo/happiness-wellbeing-confidence-concept-cheerful-attractive-african-american-woman-curly-haircut-cross-arms-chest-self-assured-powerful-pose-smiling-determined-wear-yellow-sweater_176420-35063.jpg" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Zara Isa</h2>

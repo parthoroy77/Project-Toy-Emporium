@@ -19,7 +19,7 @@ const Register = () => {
             return toast.error('Password is too short')
         }
         else if (/"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"/.test(password)) {
-            return toast.error('Password must have 1 uppercase, 1 lowercase, 1 digit and 1 special character')
+            return toast.error('Password must have 1 uppercase, 1 lowercase, 1 digit and 1 special character');
         }
         createUser(email, password).then(result => {
             const createdUser = result.user;

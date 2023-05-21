@@ -20,7 +20,7 @@ const ToyTable = ({ toy, handleDeleteToy }) => {
                     }
                 </td>
                 <td>
-                    {
+                    ${
                         price
                     }
                 </td>
