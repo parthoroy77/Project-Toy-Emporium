@@ -16,7 +16,7 @@ const Register = () => {
             const createdUser = result.user;
             createdUser.displayName = name;
             createdUser.photoURL = URL;
-            toast.success('User Created Successfully')
+            toast.success('User Created Successfully');
         }).catch(error => {
             toast.error(error.message)
         })
