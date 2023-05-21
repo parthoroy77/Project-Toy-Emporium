@@ -36,14 +36,6 @@ const ToyTable = ({ toy, handleDeleteToy }) => {
                     <h4 className='font-semibold'>{sellerName}</h4>
                     <p>{sellerEmail}</p>
                 </td>
-                <td className='space-x-3'>
-                    <button className="btn btn-ghost text-xl btn-sm">
-                        <FaEdit></FaEdit>
-                    </button>
-                    <button onClick={()=>handleDeleteToy(_id)} className="btn btn-ghost btn-sm text-xl">
-                        <FaTrashAlt></FaTrashAlt>
-                    </button>
-                </td>
             </tr>
         </>
     );
