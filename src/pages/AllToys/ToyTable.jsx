@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const ToyTable = ({ toy }) => {
     const { _id, toyName, toyImg, subCategory, price, quantity, sellerName,sellerEmail, description } = toy;
     return (
@@ -27,7 +28,9 @@ const ToyTable = ({ toy }) => {
                     {quantity}
                 </td>
                 <td>
-                    <button className="btn btn-ghost btn-xs">View Details</button>
+                    <Link to={`/details/${_id}`}>
+                        <button className="btn btn-ghost btn-xs">View Details</button>
+                    </Link>
                 </td>
                 <td>
                     <h4 className='font-semibold'>{sellerName}</h4>
