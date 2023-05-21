@@ -9,7 +9,7 @@ const MyToys = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/myToys?email=${user?.email}`, { method: 'GET' }).then(res => res.json())
         .then(data => setMyToys(data))
-    }, [])
+    }, [user])
     const handleDeleteToy = (id) => {
         Swal.fire({
             title: 'Are you sure?',
