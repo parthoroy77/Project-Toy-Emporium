@@ -2,18 +2,37 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyTable from './ToyTable';
 import { toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const AllToys = () => {
     const loadedToys = useLoaderData();
     const [allToys, setAllToys] = useState(loadedToys);
     const handleDeleteToy = (id) => {
-        fetch(`http://localhost:5000/deleteToy/${id}`, { method: 'DELETE' })
-            .then(res => res.json()).then(data => {
-                if (data.deletedCount > 0) {
-                    setAllToys(allToys.filter(toy => toy._id !== id))
-                    toast.success("Deleted Successfully")
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/deleteToy/${id}`, { method: 'DELETE' })
+                    .then(res => res.json()).then(data => {
+                        if (data.deletedCount > 0) {
+                            setAllToys(allToys.filter(toy => toy._id !== id))
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
             }
         })
+
     }
     return (
         <div className='px-5 lg:px-24'>
