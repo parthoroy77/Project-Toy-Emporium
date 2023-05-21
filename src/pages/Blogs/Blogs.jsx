@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitleHook from '../../hooks/useTitleHook';
 
 const Blogs = () => {
+    useTitleHook('Blogs')
     return (
         <div className='w-3/4 mx-auto grid gap-6 grid-cols-1 lg:grid-cols-2 my-10'>
             <div className="card bg-base-100 shadow-xl">

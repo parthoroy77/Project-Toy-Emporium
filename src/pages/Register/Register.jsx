@@ -3,7 +3,9 @@ import logo from '../../assets/Logo/logo.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useTitleHook from '../../hooks/useTitleHook';
 const Register = () => {
+    useTitleHook('Register')
     const { user, profileUpdate, createUser } = useContext(AuthContext);
     const navigate = useNavigate()
     const handleSignUp = e => {

@@ -4,7 +4,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useTitleHook from '../../hooks/useTitleHook';
 const Login = () => {
+    useTitleHook('Login')
     const { user, loginUser, googleLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()

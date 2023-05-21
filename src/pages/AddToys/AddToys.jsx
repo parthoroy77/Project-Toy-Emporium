@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useTitleHook from '../../hooks/useTitleHook';
 
 const AddToys = () => {
+    useTitleHook('Add Toys')
     const { user } = useContext(AuthContext);
     const [subCategory, setSubCategory] = useState('');
     const handleAddToy = e => {

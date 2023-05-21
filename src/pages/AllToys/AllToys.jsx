@@ -3,8 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import ToyTable from './ToyTable';
 import { toast } from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import useTitleHook from '../../hooks/useTitleHook';
 
 const AllToys = () => {
+    useTitleHook('All Toys')
     const loadedToys = useLoaderData();
     const [allToys, setAllToys] = useState(loadedToys);
     const [searchText, setSearchText] = useState('');
