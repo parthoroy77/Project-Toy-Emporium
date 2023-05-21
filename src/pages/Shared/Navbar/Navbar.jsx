@@ -13,6 +13,7 @@ const Navbar = () => {
         })
     }
 
+    console.log(user);
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>

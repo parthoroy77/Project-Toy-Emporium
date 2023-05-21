@@ -8,7 +8,10 @@ const Login = () => {
     const { user, loginUser, googleLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
-    const from = location?.state?.from.pathName || '/';
+    const from = location?.state?.from.pathname || '/';
+    // if (location.state.from.pathname) {
+    //     toast.error('Login First')
+    // }
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
