@@ -38,10 +38,22 @@ const MyToys = () => {
         })
 
     }
+    const handleSort = (sort) => {
+        if (sort === 'as') {
+            const sorted = [...myToys].sort((a, b) => a.price - b.price);
+            setMyToys(sorted)
+        }
+        else {
+            const sorted = [...myToys].sort((a, b) => b.price - a.price);
+            setMyToys(sorted)
+        }
+    }
     return (
         <div className='px-5 lg:px-24'>
             <h3 className='text-center my-7 font-bold text-3xl'>My Toys</h3>
             <div className=''>
+                <button onClick={()=> handleSort('as')} className='btn btn-xs bg-sky-500 border-0 mr-4 mb-2'>Ascending</button>
+                <button onClick={()=>handleSort('des')} className='btn btn-xs bg-sky-500 border-0 mr-4 mb-2'>Descending</button>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         {/* head */}
