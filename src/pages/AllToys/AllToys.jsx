@@ -20,7 +20,7 @@ const AllToys = () => {
                                 <th>Available Quantity</th>
                                 <th>Details</th>
                                 <th>Seller Info</th>
-                                <th>Delete Or Update</th>
+                                <th>Update Or Delete</th>
                             </tr>
                         </thead>
                         <tbody>

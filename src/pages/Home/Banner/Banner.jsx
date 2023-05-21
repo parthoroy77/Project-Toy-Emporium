@@ -1,11 +1,15 @@
 import React from 'react';
 import './Banner.css'
 import kid1 from '../../../assets/Banner/kid1.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Banner = () => {
     return (
         <div
+            
             className='shadow-2xl pt-10 justify-between bg-gradient-to-t from-pink-500 to-blue-100 lg:px-28 px-5 items-center flex flex-col gap-5 lg:flex-row '>
-            <div className='space-y-5 text-center'>
+            <div  className='space-y-5 text-center'>
                 <h2 className='text-2xl font-serif lg:text-5xl font-bold'>
                     Best Kids Store <br /> & Online Shopping
                 </h2>
@@ -19,7 +23,7 @@ const Banner = () => {
                     </button>
                 </div>
             </div>
-            <div>
+            <div data-aos="zoom-in-up" data-aos-duration="2000">
                 <img src={kid1} className='w-full' alt="" />
             </div>
         </div>
