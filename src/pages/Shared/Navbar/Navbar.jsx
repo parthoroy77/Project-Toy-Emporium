@@ -14,11 +14,11 @@ const Navbar = () => {
     }
 
     const navItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/allToys'>All Toys</Link></li>
-        <li><Link to='/myToys'>My Toys</Link></li>
-        <li><Link to='/addToys'>Add A Toys</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
+        <li className='text-sky-900 font-semibold'><Link to='/'>Home</Link></li>
+        <li className='text-sky-900 font-semibold'><Link to='/allToys'>All Toys</Link></li>
+        <li className='text-sky-900 font-semibold'><Link to='/myToys'>My Toys</Link></li>
+        <li className='text-sky-900 font-semibold'><Link to='/addToys'>Add A Toys</Link></li>
+        <li className='text-sky-900 font-semibold'><Link to='/blogs'>Blogs</Link></li>
     </>
     return (
         <div className='px-5 bg-sky-100 rounded-lg shadow-md sticky lg:px-28 '>
